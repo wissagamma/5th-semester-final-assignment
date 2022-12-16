@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>regist</title>
+    <link rel="stylesheet" href="pendaftaran.css" />
+    <!-- link font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- navbar-->
+    <header>
+      <nav class="sticky">
+        <ul>
+          <li><a href="../index.html">Profile UKM</a></li>
+          <li><a href="gallery.html">Gallery Kegiatan</a></li>
+          <li><a href="pendaftaran.html">Pendaftaran</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+
+        <div class="logo">
+          <img src="../image/logo.png" alt="logo" />
+        </div>
+        <div class="menu-toggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+    <!-- akhir navbar -->
+    <!-- form regist -->
+    <div class="container-form">
+      <div class="form">
+        <h1>
+          Form Pendaftaran UKM <br />
+          Gamma University
+        </h1>
+        <form id="latihan" onsubmit="return cek();">
+          <table align="center">
+            <tr>
+              <td><label>Nomor Induk Mahasiswa :</label></td>
+              <td><input type="text" id="nim" /></td>
+              <td><div id="v_nim"></div></td>
+            </tr>
+            <br />
+            <tr>
+              <td><label>Nama Mahasiswa :</label></td>
+              <td><input type="text" id="nama" /></td>
+              <td><div id="v_nama"></div></td>
+            </tr>
+            <br />
+            <tr>
+              <td><label>Jenis Kelamin</label></td>
+              <td>Laki-laki <input type="radio" id="jk" value="Laki-laki" /> Perempuan<input type="radio" id="jk" value="Perempuan" /></td>
+              <td><div id="v_jk"></div></td>
+            </tr>
+            <tr>
+              <td><label>Program Studi :</label></td>
+              <td><input type="text" id="prodi" /></td>
+            </tr>
+            <tr>
+              <td><label>Ukm yang akan diikuti</label></td>
+              <td>
+                <select id="ukm">
+                  <option value="--pilih--">--pilih--</option>
+                  <option value="karate">karate</option>
+                  <option value="taekwondo">taekwondo</option>
+                  <option value="pencak silat">pencak silat</option>
+                  <option value="bola volly">bola volly</option>
+                  <option value="bola basket">bola basket</option>
+                  <option value="sepak bola">sepak bola</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Hari Kegiatan</label></td>
+              <td>
+                <input type="checkbox" id="hari" value="senin" />
+                <label for="senin"> Senin</label> <br>
+                <input type="checkbox" id="hari" value="selasa" />
+                <label for="selasa"> Selasa</label> <br>
+                <input type="checkbox" id="hari" value="rabu" />
+                <label for="rabu"> Rabu</label> <br>
+                <input type="checkbox" id="hari" value="kamis" />
+                <label for="kamis"> Kamis</label> <br>
+                <input type="checkbox" id="hari" value="jumat" />
+                <label for="jumat"> Jumat</label> <br>
+                <input type="checkbox" id="hari" value="sabtu" />
+                <label for="sabtu"> Sabtu</label> <br>
+                <input type="checkbox" id="hari" value="minggu" />
+                <label for="minggu"> Minggu</label> <br>
+              </td>
+            </tr>
+            <!-- button submit -->
+            <td><button type="submit" value="proses" />Submit</td>
+            <td><button type="submit" id="cancel" value="batal" />Cancel</td>
+            <!-- <td><p id="dataregist">data muncul</p></td> -->
+          </table>
+        </form>
+      </div>
+      <div class="data">
+        <h1>Data Terdaftar</h1>
+      <p id="dataregist"></p>
+    </div>
+
+    <script src="pendaftaran.js"></script>
+  </body>
+  <footer>Wissa Gamma Essa Lingga</footer>
+</html>

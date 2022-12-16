@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  background-color: white;
+}
+
+/* Navbar style */
+header {
+  position: fixed;
+  top: 0;
+}
+nav {
+  display: flex;
+  background-color: brown;
+  border: none;
+  justify-content: space-around;
+  height: 75px;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav .logo img {
+  width: 80px;
+}
+
+nav ul li a:hover {
+  color: black;
+}
+/* akhir navbar style */
+
+/* hamburger menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.5s;
+  z-index: 1;
+}
+
+/* hambureger menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-2px, -2px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-2px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+/* ------- */
+.container-form {
+  background-color: burlywood;
+  width: 80%;
+  height: 500px;
+  margin: 7% 10%;
+  padding: 10px 10px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.form {
+  background-color: brown;
+  border-radius: 1rem;
+  width: 70%;
+  padding-left: 40px;
+}
+h1 {
+  text-align: center;
+}
+.data {
+  background-color: brown;
+  width: 29%;
+
+  border-radius: 1rem;
+  text-align: center;
+}
+.data p {
+  text-align: left;
+  padding: 10px;
+}
+form button {
+  background: lightgrey;
+  padding: 0.7em;
+  border: 0;
+  width: 50%;
+}
+form button:hover {
+  background-color: burlywood;
+  color: white;
+}
+label {
+  text-align: left;
+  padding: 0.5em 1.5em 0.5em 0;
+}
+
+select {
+  width: 100%;
+}
+
+footer {
+  margin-left: -144px;
+  padding-top: 20px;
+  background-color: brown;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  bottom: 0;
+  position: fixed;
+}
+/* ------- */
+/* responsive breakpoint tablet*/
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+
+/* responsive breakpoint hp*/
+@media screen and (max-width: 576px) {
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 80vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: brown;
+    z-index: 1;
+    transform: translatex(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  nav ul.slide {
+    transform: translatex(0);
+    opacity: 1;
+  }
+  .container-form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, fit-content);
+    gap: 2rem;
+    width: 100%;
+    margin-top: 20%;
+    margin-right: 20px;
+  }
+  .form {
+    width: 100%;
+  }
+  .data {
+    width: 100%;
+    height: 50px;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+/* akhir navbar & responsive */
